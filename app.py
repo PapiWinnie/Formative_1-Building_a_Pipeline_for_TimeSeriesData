@@ -3,9 +3,9 @@ Metro Interstate Traffic Volume – REST API
 Task 3: CRUD + Time-Series Endpoints for MySQL (SQLAlchemy) and MongoDB (Motor)
 
 Run:
-    python -m uvicorn app:app --reload --port 8000
+    python -m uvicorn app:app --reload --port 8001
 
-Docs: http://localhost:8000/docs
+Docs: http://localhost:8001/docs
 """
 
 from __future__ import annotations
