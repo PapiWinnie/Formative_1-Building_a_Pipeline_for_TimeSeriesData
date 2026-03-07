@@ -8,10 +8,6 @@ Workflow
   3. Load the saved Random Forest model.
   4. Predict traffic volume for the latest fetched record and display the result.
 
-Prerequisites
--------------
-  Run train_model.py first:  python train_model.py
-
 Usage
 -----
   python predict.py
@@ -21,14 +17,12 @@ import sys
 from pathlib import Path
 
 import joblib
-import numpy as np
 import pandas as pd
 import requests
 
-API_BASE     = "http://localhost:8001"
-FETCH_LIMIT  = 200
-MODEL_PATH   = Path("models/traffic_model.pkl")
-COLUMNS_PATH = Path("models/feature_columns.pkl")
+API_BASE    = "http://localhost:8001"
+FETCH_LIMIT = 200
+MODEL_PATH  = Path("optimized_random_forest_model.joblib")
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -148,14 +142,12 @@ def preprocess_records(records: list, feature_columns: list) -> pd.DataFrame:
 # ──────────────────────────────────────────────────────────────────────────────
 
 def load_artifacts():
-    for path in (MODEL_PATH, COLUMNS_PATH):
-        if not path.exists():
-            print(f"[ERROR] Artifact not found: {path}")
-            print("        Run train_model.py first:  python train_model.py")
-            sys.exit(1)
+    if not MODEL_PATH.exists():
+        print(f"[ERROR] Model not found: {MODEL_PATH}")
+        sys.exit(1)
 
     model        = joblib.load(MODEL_PATH)
-    feature_cols = joblib.load(COLUMNS_PATH)
+    feature_cols = list(model.feature_names_in_)
     print(f"[Step 3] Model loaded from '{MODEL_PATH}'  ({len(feature_cols)} features)")
     return model, feature_cols
 
