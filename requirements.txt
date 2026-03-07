@@ -1,0 +1,21 @@
+# ── API (Task 3) ──────────────────────────────────────────────────────────────
+fastapi
+uvicorn[standard]
+pydantic
+
+# ── Databases (Task 2 & 3) ────────────────────────────────────────────────────
+sqlalchemy
+pymysql
+motor
+pymongo
+python-dotenv
+
+# ── Data & ML (Task 1 & 4) ───────────────────────────────────────────────────
+pandas
+numpy
+matplotlib
+scikit-learn
+joblib
+
+# ── HTTP client (Task 4) ──────────────────────────────────────────────────────
+requests
