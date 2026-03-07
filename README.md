@@ -10,13 +10,15 @@ A full end-to-end time-series pipeline built on the **Metro Interstate Traffic V
 .
 ├── dataset/
 │   └── Metro_Interstate_Traffic_Volume.csv      # Source dataset
+│   └── load_data.py                             # python script for loading dataset 
 ├── optimized_random_forest_model.joblib         # Pre-trained model saved from the notebook
 ├── traffic_volume_prediction.ipynb              # Task 1 – EDA, analysis & model experiments
 ├── schema.sql                                   # Task 2 – MySQL schema, seed data & queries
 ├── collection_design.js                         # Task 2 – MongoDB collection design & queries
 ├── app.py                                       # Task 3 – FastAPI REST API (MySQL + MongoDB)
 ├── predict.py                                   # Task 4 – Fetch → Preprocess → Predict pipeline
-└── requirements.txt
+├── requirements.txt
+└── README.md
 ```
 
 ---
