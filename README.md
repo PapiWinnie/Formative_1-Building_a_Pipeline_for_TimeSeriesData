@@ -79,12 +79,11 @@ Open and run `traffic_volume_prediction.ipynb` in Jupyter or Google Colab.
 The notebook covers:
 
 - **Understanding the dataset** — time range (Oct 2012 – Sep 2018), hourly granularity, missing value handling (holiday column filled with `"None"`), statistical distributions
-- **Analytical questions** (5+), including:
-  - Traffic trends over time
+- **Analytical questions** (5), including:
   - Holiday impact on traffic volume
   - 24-hour and 7-day moving averages
   - Lag effect analysis (1h, 24h, 168h, 720h lags)
-  - Weather correlation with traffic
+    
 - **Model experiments** — three experiments compared:
 
 | Model | MAE | RMSE |
